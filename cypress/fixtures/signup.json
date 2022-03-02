@@ -1,0 +1,23 @@
+{
+    "user": {
+        "firstname": "Firstname test",
+        "lastname": "Lastname test",
+        "password": "passwd",
+        "birth_day": "12",
+        "birth_month": "January",
+        "birth_year": "1990",
+        "company_name": "Test Co.",
+        "address_1": "Test Address, 12345, Test Co., Etc.",
+        "address_2": "Test Address Second Line",
+        "city": "Testland",
+        "state": "Oregon",
+        "post_code": "00000",
+        "country": "United States",
+        "additional_info": "Test Additional Information",
+        "home_phone": "555-898-0101",
+        "mobile_phone": "555-898-0102"
+    },
+    "invalid_input": {
+        "invalid_post_code": "555-99BC"
+    }
+}
