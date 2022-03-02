@@ -1,10 +1,12 @@
-# Automation Practice - Example end-to-end test suite for and e-commerce website
+# Automation Practice
 
+## Example end-to-end test suite for and e-commerce website
+------
 ## System Under Test
 
 http://www.automationpractice.com
 
-## Execution
+## Test Suite Execution
 
 1. Clone this repository, via command line:
    ```
