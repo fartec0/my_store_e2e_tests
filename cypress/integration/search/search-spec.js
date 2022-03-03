@@ -13,7 +13,7 @@ describe('The Search feature', () => {
     })
 
     it('should display the search suggestions', function () {
-        cy.get('#search_query_top').type('shoes')
+        cy.get('#search_query_top').type(this.search.shoes.search_query)
         cy.get('div[class="ac_results"]').should('be.visible').then(($suggestions) => {
             cy.get($suggestions).find('li').then(($lis) => {
                 cy.get($lis).each(($li) => {
@@ -26,17 +26,17 @@ describe('The Search feature', () => {
     })
 
     it.only('should display the search suggestions', function () {
-        cy.get('#search_query_top').type('shoes')
+        cy.get('#search_query_top').type(this.search.shoes.search_query)
         
         cy.get('#searchbox > .btn').click()
         
         cy.get('.page-heading').each(($heading) => {
             expect($heading.prop('innerText')).not.to.be.empty
-            expect($heading.prop('innerText')).to.include('SHOES')
+            expect($heading.prop('innerText')).to.include(this.search.shoes.heading.inner_text)
         })
         
         cy.get('.top-pagination-content > .product-count').then(($results_count) => {
-            expect($results_count.prop('innerText')).to.eq('Showing 1 - 7 of 7 items')
+            expect($results_count.prop('innerText')).to.eq(this.search.shoes.results)
         })
     })
 })
