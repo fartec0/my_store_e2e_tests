@@ -7,6 +7,7 @@
 http://www.automationpractice.com
 
 ## Test Suite Execution
+Please follow the instructions below on how to execute the test suite via CLI.
 
 1. Clone this repository, via command line:
    ```
