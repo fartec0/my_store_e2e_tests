@@ -25,7 +25,7 @@ describe('The Search feature', () => {
         })
     })
 
-    it('should display the search suggestions', function () {
+    it('should return the search results for a valid query', function () {
         cy.get('#search_query_top').type(this.search.shoes.search_query)
         
         cy.get('#searchbox > .btn').click()
