@@ -1,7 +1,3 @@
-import AuthenticationPage from '../../page-objects/authentication-page'
-
-const authenticationPage = new AuthenticationPage()
-
 describe('The Search feature', () => {
 
     beforeEach( function () {
