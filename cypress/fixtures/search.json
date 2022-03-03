@@ -1,3 +1,9 @@
 {
-    
+    "shoes": {
+        "heading": {
+            "inner_text": "SHOES"
+        },
+        "results": "Showing 1 - 7 of 7 items",
+        "search_query": "shoes"
+    }
 }
