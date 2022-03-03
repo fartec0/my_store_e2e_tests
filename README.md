@@ -47,3 +47,6 @@ The Signup process:
 The Sign-up feature:
 1. Should display the search suggestions.
 2. Should return the search results for a valid query.
+
+#### Negative tests
+There are currently no negative test for the Search functionality. 
