@@ -6,7 +6,25 @@
 
 http://www.automationpractice.com
 
-## Test Suite Execution
+## Pre-requisite software for executing the project
+- [NPM](https://www.npmjs.com/)
+- [Cypress](https://www.cypress.io/)
+
+More info on how to install Cypress can be found on its [official guide](https://docs.cypress.io/guides/getting-started/installing-cypress)
+
+## Executing the UI front-end acceptance test suite using Cypress test framework
+
+### Using the cypress GUI
+``` sh
+$ git clone git@github.com:fartec0/my_store_e2e_tests.git
+$ cd my_store_e2e_tests
+# Install cypress - if not previously installed
+$ npm install cypress --save-dev
+# Launch the cypress UI application
+$ npx cypress open
+```
+
+### Test Suite Execution via Command Line
 Please follow the instructions below on how to execute the test suite via CLI.
 
 1. Clone this repository, via command line:
@@ -50,3 +68,12 @@ The Sign-up feature:
 
 #### Negative tests
 There are currently no negative test for the Search functionality. 
+
+-----
+
+## Best practices applied
+- [Selecting Elements](https://docs.cypress.io/guides/references/best-practices#Selecting-Elements): Provided by the application under test (AUT)
+- [Assigning return values](https://docs.cypress.io/guides/references/best-practices#Assigning-Return-Values)
+- [Having tests rely on the state of previous tests](https://docs.cypress.io/guides/references/best-practices#Having-tests-rely-on-the-state-of-previous-tests)
+- [Creating "tiny" tests with a single assertion](https://docs.cypress.io/guides/references/best-practices#Creating-tiny-tests-with-a-single-assertion)
+- [Unnecessary Waiting](https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting)
