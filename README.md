@@ -69,7 +69,7 @@ The Sign-up feature:
 #### Negative tests
 There are currently no negative test for the Search functionality. 
 
------
+---
 
 ## Best practices applied
 - [Selecting Elements](https://docs.cypress.io/guides/references/best-practices#Selecting-Elements): Provided by the application under test (AUT)
@@ -77,3 +77,7 @@ There are currently no negative test for the Search functionality.
 - [Having tests rely on the state of previous tests](https://docs.cypress.io/guides/references/best-practices#Having-tests-rely-on-the-state-of-previous-tests)
 - [Creating "tiny" tests with a single assertion](https://docs.cypress.io/guides/references/best-practices#Creating-tiny-tests-with-a-single-assertion)
 - [Unnecessary Waiting](https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting)
+
+---
+## Cypress Dashboard
+The test suite execution metrics are available at https://dashboard.cypress.io/projects/6h9nug 
