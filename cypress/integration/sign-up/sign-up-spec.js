@@ -13,44 +13,108 @@ describe('The Sign Up process', () => {
     })
 
     // Positive tests
-    it('should be completed when all the entered information is correct', function () {
+    it.only('should be completed when all the entered information is correct', function () {
         cy.get('.login')
-        .click()
+            .click()
 
         cy.get('#email_create')
-        .type((Math.random() + 1).toString(36).substring(7) + '@bit-test.com')
+            .type((Math.random() + 1).toString(36).substring(7) + '@bit-test.com')
 
         cy.get('#SubmitCreate > span')
-        .click()
-        
+            .click()
+    
         cy.get('.page-heading').should('be.visible').then(() => {
             cy.log("Fill in the user registration form")
-            authenticationPage.getGenderFormField().should('not.to.be.selected').click()
-            authenticationPage.getCustomerFirstnameFormField().should('be.empty').type(this.signup.user.firstname)
-            authenticationPage.getCustomerLastnameFormField().should('be.empty').type(this.signup.user.lastname)
-            authenticationPage.getEmailFormField().should('be.empty')
-            authenticationPage.getPasswordFormField().should('be.empty').type(this.signup.user.password)
-            authenticationPage.getDaysFormField().should('contain', '-').select(this.signup.user.birth_day)
-            authenticationPage.getMonhtsFormField().should('contain', '-').select(this.signup.user.birth_month)
-            authenticationPage.getYearsFormField().should('contain', '-').select(this.signup.user.birth_year)
-            authenticationPage.getNewsletterFormField().should('not.to.be.selected').click()
-            authenticationPage.getOptInFormField().should('not.to.be.selected').click()
-            authenticationPage.getCompanyFormField().should('be.empty').type('Test Co.')
-            authenticationPage.getAddress1FormField().should('be.empty').type(this.signup.user.address_1)
-            authenticationPage.getAddress2FormField().should('be.empty').type(this.signup.user.address_2)
-            authenticationPage.getCityFormField().should('be.empty').type(this.signup.user.city)
-            authenticationPage.getStateFormField().should('contain', '-').select(this.signup.user.state)
-            authenticationPage.getPostCodeFormField().should('be.empty').type(this.signup.user.post_code)
-            authenticationPage.getCountryFormField().should('contain', '-').select(this.signup.user.country)
-            authenticationPage.getAdditionalInfoFormField().should('be.empty').type(this.signup.user.additional_info)
-            authenticationPage.getHomePhoneFormField().should('be.empty').type(this.signup.user.home_phone)
-            authenticationPage.getMobilePhoneFormField().should('be.empty').type(this.signup.user.mobile_phone)
-            authenticationPage.getAliasFormField().should('be.empty')
-            authenticationPage.getRegisterButton().click().then(() => {
-                // My Account page
-                cy.get('#account-creation_form').should('not.exist')
-                cy.get('.info-account').should('be.visible')
-            })
+
+            authenticationPage.getGenderFormField()
+                .should('not.to.be.selected')
+                .click()
+
+            authenticationPage.getCustomerFirstnameFormField()
+                .should('be.empty')
+                .type(this.signup.user.firstname)
+
+            authenticationPage.getCustomerLastnameFormField()
+                .should('be.empty')
+                .type(this.signup.user.lastname)
+
+            authenticationPage.getEmailFormField()
+                .should('be.empty')
+
+            authenticationPage.getPasswordFormField()
+                .should('be.empty')
+                .type(this.signup.user.password)
+
+            authenticationPage.getDaysFormField()
+                .should('contain', '-')
+                .select(this.signup.user.birth_day)
+
+            authenticationPage.getMonhtsFormField()
+                .should('contain', '-')
+                .select(this.signup.user.birth_month)
+
+            authenticationPage.getYearsFormField()
+                .should('contain', '-')
+                .select(this.signup.user.birth_year)
+
+            authenticationPage.getNewsletterFormField()
+                .should('not.to.be.selected')
+                .click()
+
+            authenticationPage.getOptInFormField()
+                .should('not.to.be.selected')
+                .click()
+
+            authenticationPage.getCompanyFormField()
+                .should('be.empty')
+                .type('Test Co.')
+
+            authenticationPage.getAddress1FormField()
+                .should('be.empty')
+                .type(this.signup.user.address_1)
+
+            authenticationPage.getAddress2FormField()
+                .should('be.empty')
+                .type(this.signup.user.address_2)
+
+            authenticationPage.getCityFormField()
+                .should('be.empty')
+                .type(this.signup.user.city)
+
+            authenticationPage.getStateFormField()
+                .should('contain', '-')
+                .select(this.signup.user.state)
+
+            authenticationPage.getPostCodeFormField()
+                .should('be.empty')
+                .type(this.signup.user.post_code)
+
+            authenticationPage.getCountryFormField()
+                .should('contain', '-')
+                .select(this.signup.user.country)
+
+            authenticationPage.getAdditionalInfoFormField()
+                .should('be.empty')
+                .type(this.signup.user.additional_info)
+
+            authenticationPage.getHomePhoneFormField()
+                .should('be.empty')
+                .type(this.signup.user.home_phone)
+
+            authenticationPage.getMobilePhoneFormField()
+                .should('be.empty')
+                .type(this.signup.user.mobile_phone)
+
+            authenticationPage.getAliasFormField()
+                .should('be.empty')
+
+            authenticationPage.getRegisterButton()
+                .click()
+                .then(() => {
+                    // My Account page
+                    cy.get('#account-creation_form').should('not.exist')
+                    cy.get('.info-account').should('be.visible')
+                })
         })
      })
 
