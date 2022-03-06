@@ -13,7 +13,7 @@ describe('The Sign Up process', () => {
     })
 
     // Positive tests
-    it.only('should be completed when all the entered information is correct', function () {
+    it('should be completed when all the entered information is correct', function () {
         cy.get('.login')
             .click()
 
