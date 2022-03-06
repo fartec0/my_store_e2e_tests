@@ -1,4 +1,4 @@
-describe('The Shopping Cart feature', () => {
+describe('The Shopping Cart', () => {
 
     beforeEach( function () {
         cy.fixture('cart').then((cart) => {
@@ -8,7 +8,7 @@ describe('The Shopping Cart feature', () => {
         cy.visit('')
     })
 
-    it('should', function () {
+    it('should correctly add a product', function () {
         // Add first highlighted product to cart
         cy.get('#homefeatured > .first-in-line.first-item-of-tablet-line > .product-container > .right-block > .button-container > .ajax_add_to_cart_button > span')
         .click()
@@ -19,16 +19,16 @@ describe('The Shopping Cart feature', () => {
         })
 
         cy.get('#layer_cart_product_title').then(($modal_product_title) => {
-            // expect($modal_product_title.prop('innerText')).to.include(('Faded Short Sleeve T-shirts'))
+            cy.get($modal_product_title).should('have.text','Faded Short Sleeve T-shirts')
             expect($modal_product_title.prop('spellcheck')).to.eq(true)
         })
 
         cy.get('#layer_cart_product_attributes').then(($modal_product_attributes) => {
-            // expect($modal_product_attributes.prop('innerText')).to.include(('Orange, S'))
+            cy.get($modal_product_attributes).should('have.text', 'Orange, S')
         })
 
         cy.get('#layer_cart_product_quantity').then(($modal_cart_product_quantity) => {
-            // expect($modal_cart_product_quantity.prop('innerText')).to.eq(('1'))
+            expect($modal_cart_product_quantity.prop('innerText')).to.eq(('1'))
         })
 
         cy.get('h2 > .ajax_cart_product_txt').then(($ajax_cart_product_txt) => {
@@ -36,7 +36,7 @@ describe('The Shopping Cart feature', () => {
         })
 
         cy.get('.ajax_block_products_total').then(($ajax_block_products_total) => {
-            // expect($ajax_block_products_total.prop('innerText')).to.include(('$16.51'))
+            cy.get($ajax_block_products_total).should('have.text', '$16.51')
         })
 
         cy.get('.continue > span').then(($continue_button) => {
@@ -54,7 +54,6 @@ describe('The Shopping Cart feature', () => {
             // Verify that the modal has been closed
             cy.get('.layer_cart_product').should('not.to.be.visible')
             cy.get('.layer_cart_cart').should('not.to.be.visible')
-
         })
     })
 })
