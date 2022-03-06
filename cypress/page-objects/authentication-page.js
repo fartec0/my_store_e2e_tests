@@ -2,102 +2,120 @@ class AuthenticationPage {
 
     constructor() {
         this.gender = '#id_gender1'
+        this.customer_firstname = '#customer_firstname'
+        this.customer_lastname = '#customer_lastname'
+        this.email = '#email'
+        this.passwd = '#passwd'
+        this.days = '#days'
+        this.months = '#months'
+        this.years = '#years'
+        this.newsletter = '#newsletter'
+        this.optin = '#optin'
+        this.firstname = '#firstname'
+        this.company = '#company'
+        this.address1 = '#address1'
+        this.address2 = '#address2'
+        this.city = '#city'
+        this.id_state = '#id_state'
+        this.postcode = '#postcode'
+        this.id_country = '#id_country'
+        this.other = '#other'
+        this.phone = '#phone'
+        this.phone_mobile = '#phone_mobile'
+        this.alias = '#alias'
     }
 
     getGenderFormField() {
-        return cy.get('#id_gender1')
+        return cy.get(this.gender)
     }
 
     getCustomerFirstnameFormField() {
-        return cy.get('#customer_firstname')
+        return cy.get(this.customer_firstname)
     }
 
     getCustomerLastnameFormField() {
-        return cy.get('#customer_lastname')
+        return cy.get(this.customer_lastname)
     }
 
     getEmailFormField() {
-        return cy.get('#email')
+        return cy.get(this.email)
     }
 
     getPasswordFormField() {
-        return cy.get('#passwd')
+        return cy.get(this.passwd)
     }
     
     getDaysFormField() {
-        return cy.get('#days')
+        return cy.get(this.days)
     }
 
     getMonhtsFormField() {
-        return cy.get('#months')
+        return cy.get(this.months)
     }
 
     getYearsFormField() {
-        return cy.get('#years')
+        return cy.get(this.years)
     }
 
     getNewsletterFormField() {
-        return cy.get('#newsletter')
+        return cy.get(this.newsletter)
     }
 
     getOptInFormField() {
-        return cy.get('#optin')
+        return cy.get(this.optin)
     }
 
     getFirstnameFormField() {
-        return cy.get('#firstname')
+        return cy.get(this.firstname)
     }
 
     getCompanyFormField() {
-        return cy.get('#company')
+        return cy.get(this.company)
     }
 
     getAddress1FormField() {
-        return cy.get('#address1')
+        return cy.get(this.address1)
     }
 
     getAddress2FormField() {
-        return cy.get('#address2')
+        return cy.get(this.address2)
     }
 
     getCityFormField() {
-        return cy.get('#city')
+        return cy.get(this.city)
     }
 
     getStateFormField() {
-        return cy.get('#id_state')
+        return cy.get(this.id_state)
     }
 
     getPostCodeFormField() {
-        return cy.get('#postcode')
+        return cy.get(this.postcode)
     }
 
     getCountryFormField() {
-        return cy.get('#id_country')
+        return cy.get(this.id_country)
     }
 
     getAdditionalInfoFormField() {
-        return cy.get('#other')
+        return cy.get(this.other)
     }
 
     getHomePhoneFormField() {
-        return cy.get('#phone')
+        return cy.get(this.phone)
     }
 
     getMobilePhoneFormField() {
-        return cy.get('#phone_mobile')
+        return cy.get(this.phone_mobile)
     }
 
     getAliasFormField() {
-        return cy.get('#alias')
+        return cy.get(this.alias)
     }
 
     getRegisterButton() {
         return cy.contains('Register')
     }
-    
-
-    
 }
 
 export default AuthenticationPage
