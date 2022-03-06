@@ -1,3 +1,18 @@
 {
-    
+    "modal": {
+        "added_ok_message" : "Product successfully added to your shopping cart",
+        "content_message": "There is 1 item in your cart.",
+        "continue_shopping_message": "Continue shopping",
+        "css_display": "block",
+        "css_border_color": "rgb(116, 213, 120)",
+        "proceed_to_checkout_message": "Proceed to checkout"
+    },
+    "product": {
+        "t_shirt": {
+            "color_and_size": "Orange, S",
+            "quantity": "1",
+            "price": "$16.51",
+            "title": "Faded Short Sleeve T-shirts"
+        }
+    }
 }
