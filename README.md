@@ -1,7 +1,7 @@
 # Automation Practice
 
 ## Example end-to-end test suite for an example e-commerce website
-------
+
 ## System Under Test
 
 http://www.automationpractice.com
@@ -67,7 +67,13 @@ The Sign-up feature:
 2. Should return the search results for a valid query.
 
 #### Negative tests
-There are currently no negative test for the Search functionality. 
+There are currently no negative test for the Search functionality.
+
+### Shopping cart
+
+#### Positive tests
+The shopping cart:
+- Should correctly add a product
 
 ---
 
