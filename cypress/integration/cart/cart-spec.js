@@ -15,30 +15,30 @@ describe('The Shopping Cart', () => {
 
         // Added to cart modal
         cy.get('.layer_cart_product > h2')
-            .should('include.text', 'Product successfully added to your shopping cart')
+            .should('include.text', this.cart.modal.added_ok_message )
 
         cy.get('#layer_cart_product_title')
-            .should('have.text','Faded Short Sleeve T-shirts')
+            .should('have.text', this.cart.product.t_shirt.title)
 
         cy.get('#layer_cart_product_attributes')
-            .should('have.text', 'Orange, S')
+            .should('have.text', this.cart.product.t_shirt.color_and_size)
 
         cy.get('#layer_cart_product_quantity')
-            .should('have.text', '1')
+            .should('have.text', this.cart.product.t_shirt.quantity)
 
         cy.get('h2 > .ajax_cart_product_txt')
-            .should('include.text', 'There is 1 item in your cart.')
+            .should('include.text', this.cart.modal.content_message)
 
         cy.get('.ajax_block_products_total')
-            .should('have.text', '$16.51')
+            .should('have.text', this.cart.product.t_shirt.price)
 
         cy.get('.continue > span')
-            .should('include.text', 'Continue shopping')
+            .should('include.text', this.cart.modal.continue_shopping_message)
 
         cy.get('.button-medium > span')
-            .should('include.text' ,'Proceed to checkout')
-            .and('have.css', 'display', 'block')
-            .and('have.css', 'border-color', 'rgb(116, 213, 120)')
+            .should('include.text', this.cart.modal.proceed_to_checkout_message)
+            .and('have.css', 'display', this.cart.modal.css_display)
+            .and('have.css', 'border-color', this.cart.modal.css_border_color)
 
         // Close the modal
         cy.get('.cross').click().then(() => {
