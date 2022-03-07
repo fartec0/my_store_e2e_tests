@@ -8,7 +8,7 @@ describe('The Search feature', () => {
         cy.visit('')
     })
 
-    it('should display the search suggestions', function () {
+    it.skip('should display the search suggestions', function () {
         cy.get('#search_query_top').type(this.search.shoes.search_query)
         cy.get('div[class="ac_results"]').should('be.visible').then(($suggestions) => {
             cy.get($suggestions).find('li').then(($lis) => {
