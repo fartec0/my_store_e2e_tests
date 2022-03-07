@@ -39,13 +39,13 @@ describe('The Shopping Cart', () => {
         shoppingCartPage.getCartModalContinueShoppingMessage()
             .should('include.text', this.cart.modal.continue_shopping_message)
 
-        cy.get('.button-medium > span')
+        shoppingCartPage.getCartModalCheckoutButton()
             .should('include.text', this.cart.modal.proceed_to_checkout_message)
             .and('have.css', 'display', this.cart.modal.css_display)
             .and('have.css', 'border-color', this.cart.modal.css_border_color)
 
         // Close the modal
-        cy.get('.cross').click().then(() => {
+        shoppingCartPage.getCartModalCloseButton().click().then(() => {
             // Verify that the modal has been closed
             cy.get('.layer_cart_product')
                 .should('not.to.be.visible')
