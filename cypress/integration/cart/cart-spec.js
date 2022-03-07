@@ -1,3 +1,7 @@
+import ShoppingCartPage from '../../page-objects/shopping-cart'
+
+const shoppingCartPage = new ShoppingCartPage()
+
 describe('The Shopping Cart', () => {
 
     beforeEach( function () {
@@ -14,25 +18,25 @@ describe('The Shopping Cart', () => {
         .click()
 
         // Added to cart modal
-        cy.get('.layer_cart_product > h2')
+        shoppingCartPage.getCartModalH2()
             .should('include.text', this.cart.modal.added_ok_message )
 
-        cy.get('#layer_cart_product_title')
+        shoppingCartPage.getCartModalProductTitle()
             .should('have.text', this.cart.product.t_shirt.title)
 
-        cy.get('#layer_cart_product_attributes')
+        shoppingCartPage.getCartModalProductAttributes()
             .should('have.text', this.cart.product.t_shirt.color_and_size)
 
-        cy.get('#layer_cart_product_quantity')
+        shoppingCartPage.getCartModalProductQuantity()        
             .should('have.text', this.cart.product.t_shirt.quantity)
 
-        cy.get('h2 > .ajax_cart_product_txt')
+        shoppingCartPage.getCartModalProductText()
             .should('include.text', this.cart.modal.content_message)
 
-        cy.get('.ajax_block_products_total')
+        shoppingCartPage.getCartModalProductsTotal()
             .should('have.text', this.cart.product.t_shirt.price)
 
-        cy.get('.continue > span')
+        shoppingCartPage.getCartModalContinueShoppingMessage()
             .should('include.text', this.cart.modal.continue_shopping_message)
 
         cy.get('.button-medium > span')
